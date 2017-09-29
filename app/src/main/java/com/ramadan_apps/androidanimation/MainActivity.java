@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
         ImageView thumbnail = (ImageView)thumbnailView;
         ImageView animatedImage = (ImageView) findViewById(R.id.animatedImage);
 
+
         animatedImage.setImageDrawable(thumbnail.getDrawable());
         animatedImage.setVisibility(View.VISIBLE);
 
