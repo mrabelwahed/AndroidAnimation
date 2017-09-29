@@ -22,7 +22,6 @@ public class MainActivity extends AppCompatActivity {
 
         ImageView imageView = (ImageView) view;
         ImageView animatedImage = (ImageView) findViewById(R.id.animatedImage);
-
         Animator animator = AnimatorInflater.loadAnimator(MainActivity.this,R.animator.flip_on_verticle);
         animator.setTarget(imageView);
         animator.start();
