@@ -1,11 +1,15 @@
 package com.ramadan_apps.androidanimation;
 
+import android.animation.Animator;
+import android.animation.AnimatorInflater;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
+
+import static android.R.attr.animation;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -16,16 +20,16 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void imageClicked(View thumbnailView) {
+    public void flipOnVertical(View thumbnailView) {
         ImageView thumbnail = (ImageView)thumbnailView;
         ImageView animatedImage = (ImageView) findViewById(R.id.animatedImage);
 
 
-        animatedImage.setImageDrawable(thumbnail.getDrawable());
-        animatedImage.setVisibility(View.VISIBLE);
 
-        Animation animation
-                = AnimationUtils.loadAnimation(this, R.anim.scale_animation01);
-        animatedImage.startAnimation(animation);
+
+        Animator animator
+                = AnimatorInflater.loadAnimator(this, R.animator.flip_on_verticle);
+        animator.setTarget(thumbnail);
+        animator.start();
     }
 }
